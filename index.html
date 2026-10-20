@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Portfolio</title>
+  <meta name="description" content="Personal portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- HERO (sticky; the rest of the page slides over it) -->
+  <div class="hero-sticky">
+    <header class="hero" id="home">
+      <div class="moving-grid" aria-hidden="true"></div>
+      <nav class="hero-nav">
+        <span class="nav-logo" data-bind="name"></span>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-resume" data-href="resume" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <div class="profile-header">
+          <div class="profile-image"><img data-src="photo" alt="Profile photo" /></div>
+          <div class="status">
+            <span class="status-label" data-bind="statusLabel"></span>
+            <span class="status-org" data-bind="statusOrg"></span>
+          </div>
+        </div>
+        <h1 class="hero-title" data-bind="name"></h1>
+        <p class="hero-subtitle" data-bind="tagline"></p>
+        <div class="hero-actions">
+          <a class="btn-outline" data-href="resume" target="_blank" rel="noopener">↓ Download Resume</a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main class="main-content">
+    <span id="hero-spy" data-spy="Hero" hidden></span>
+    <section class="about dark scribble" id="about" data-spy="About">
+      <div class="about-wrap">
+        <h2 class="massive-title">About</h2>
+        <div class="about-bio">
+          <p class="main-bio"><span class="name-highlight" data-bind="greeting"></span><span data-bind="bio"></span></p>
+          <p class="main-bio secondary" data-bind="bio2"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="light blocks" id="education" data-spy="Education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline" id="edu-list"></div>
+      </div>
+    </section>
+
+    <section class="dark scribble" id="experience" data-spy="Experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline" id="exp-list"></div>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills" id="skills"></div>
+      </div>
+    </section>
+
+    <section class="light blocks" id="projects" data-spy="Projects">
+      <div class="container">
+        <div class="projects-head">
+          <h2 class="section-title">Projects &amp; Research</h2>
+          <span class="eyebrow">Lorem ipsum dolor sit amet</span>
+        </div>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section class="dark contact" id="contact" data-spy="Contact">
+      <div class="container contact-grid">
+        <div>
+          <h2 class="big-title">Contact</h2>
+          <p class="status-text" data-bind="contactNote"></p>
+          <p class="highlight-note" data-bind="contactHighlight"></p>
+          <img class="contact-img" data-src="contactImage" alt="" />
+          <a class="btn-solid wide" data-href="mailto">Reach Out →</a>
+          <p class="email" data-bind="email"></p>
+          <div class="socials" id="socials"></div>
+        </div>
+        <form class="message-card" id="contact-form">
+          <h3>Send Message</h3>
+          <label class="field"><span>Name *</span><input name="name" placeholder="Your name" required /></label>
+          <label class="field"><span>Email *</span><input name="email" type="email" placeholder="email@example.com" required /></label>
+          <label class="field"><span>Subject *</span><input name="subject" placeholder="Discussion topic" required /></label>
+          <label class="field"><span>Message *</span><textarea name="message" rows="4" placeholder="Your message..." required></textarea></label>
+          <button class="btn-solid" type="submit">➤ Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="name-banner" data-bind="name"></div>
+      <p class="credits">© <span id="year"></span> <span data-bind="name"></span>. Built by hand.</p>
+    </footer>
+  </main>
+
+  <nav class="scroll-spy" id="spy" aria-label="Section navigation"></nav>
+  <button class="to-top" id="to-top" aria-label="Back to top">↑ <span>Back to top</span></button>
+
+  <script src="content.js?v=5"></script>
+  <script src="main.js?v=5"></script>
+</body>
+</html>
